@@ -1,0 +1,24 @@
+{
+  "name": "npm-frontend-build-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for frontend development using npm scripts.",
+  "author": "Yu Kanamori <y.kinmori@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uknmr/npm-frontend-build-boilerplate"
+  },
+  "bugs": {
+    "url": "https://github.com/uknmr/npm-frontend-build-boilerplate/issues"
+  },
+  "keywords": [
+    "npm",
+    "scripts",
+    "npm scripts",
+    "npm-scripts"
+  ],
+  "scripts": {
+  },
+  "devDependencies": {
+  }
+}
