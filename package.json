@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
+    "csswring": "^5.1.0",
     "postcss-cli": "^2.6.0",
     "postcss-import": "^9.0.0"
   }

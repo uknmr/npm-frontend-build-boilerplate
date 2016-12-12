@@ -1,6 +1,7 @@
 {
   "use": [
     "postcss-import",
-    "autoprefixer"
+    "autoprefixer",
+    "csswring"
   ]
 }
