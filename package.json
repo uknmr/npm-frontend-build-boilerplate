@@ -18,7 +18,8 @@
     "npm-scripts"
   ],
   "scripts": {
-    "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css"
+    "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css",
+    "watch:css": "npm run build:css -- --watch --map"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
