@@ -21,6 +21,7 @@
     "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.3",
     "postcss-cli": "^2.6.0",
     "postcss-import": "^9.0.0"
   }
