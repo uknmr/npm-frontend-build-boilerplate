@@ -18,6 +18,7 @@
     "npm-scripts"
   ],
   "scripts": {
+    "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css"
   },
   "devDependencies": {
     "postcss-cli": "^2.6.0",
