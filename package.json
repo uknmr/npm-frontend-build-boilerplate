@@ -20,5 +20,6 @@
   "scripts": {
   },
   "devDependencies": {
+    "postcss-cli": "^2.6.0"
   }
 }
