@@ -27,14 +27,20 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
+    "babel-eslint": "^7.1.1",
     "babel-preset-es2015": "^6.18.0",
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "csswring": "^5.1.0",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "exorcist": "^0.4.0",
     "mkdirp": "^0.5.1",
     "postcss-cli": "^2.6.0",
     "postcss-import": "^9.0.0",
+    "stylelint": "^7.6.0",
+    "stylelint-config-qiita": "^1.0.0",
     "uglify-js": "^2.7.5",
     "watchify": "^3.7.0"
   }
