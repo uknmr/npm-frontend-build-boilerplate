@@ -23,7 +23,8 @@
     "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css",
     "build:js": "mkdirp dist/scripts && npm run browserify && npm run uglify",
     "watch:css": "npm run build:css -- --watch --map",
-    "watch:js": "mkdirp dist/scripts && watchify --entry src/scripts/app.js --transform babelify --outfile 'exorcist dist/scripts/bundle.js.map > dist/scripts/bundle.js' --debug --verbose"
+    "watch:js": "mkdirp dist/scripts && watchify --entry src/scripts/app.js --transform babelify --outfile 'exorcist dist/scripts/bundle.js.map > dist/scripts/bundle.js' --debug --verbose",
+    "lint:css": "stylelint 'src/styles/**/*css'"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
