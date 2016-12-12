@@ -18,8 +18,12 @@
     "npm-scripts"
   ],
   "scripts": {
+    "browserify": "browserify --entry src/scripts/app.js --transform babelify > dist/scripts/bundle.js",
+    "uglify": "uglifyjs --compress warnings=false --mangle --output dist/scripts/bundle.min.js -- dist/scripts/bundle.js",
     "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css",
-    "watch:css": "npm run build:css -- --watch --map"
+    "build:js": "mkdirp dist/scripts && npm run browserify && npm run uglify",
+    "watch:css": "npm run build:css -- --watch --map",
+    "watch:js": "mkdirp dist/scripts && watchify --entry src/scripts/app.js --transform babelify --outfile 'exorcist dist/scripts/bundle.js.map > dist/scripts/bundle.js' --debug --verbose"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
