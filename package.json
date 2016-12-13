@@ -43,7 +43,8 @@
     "clean:css": "rimraf $npm_package_config_css_dist/*",
     "clean:js": "rimraf $npm_package_config_js_dist/*",
     "lint:css": "stylelint '$npm_package_config_css_src/**/*css'",
-    "lint:js": "eslint $npm_package_config_js_src"
+    "lint:js": "eslint $npm_package_config_js_src",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
