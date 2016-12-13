@@ -32,6 +32,8 @@
     "browserify": "browserify --entry $npm_package_config_js_src/app.js --transform babelify > $npm_package_config_js_dist/bundle.js",
     "uglify": "uglifyjs --compress warnings=false --mangle --output $npm_package_config_js_dist/bundle.min.js -- $npm_package_config_js_dist/bundle.js",
     "serve": "browser-sync start $npm_package_config_browserSyncOpt",
+    "prebuild": "npm run clean",
+    "build": "npm run build:css & npm run build:js",
     "build:css": "postcss --config .postcssrc.json --dir $npm_package_config_css_dist $npm_package_config_css_src/*.css",
     "build:js": "mkdirp $npm_package_config_js_dist && npm run browserify && npm run uglify",
     "watch": "npm run serve & npm run watch:css & npm run watch:js",
