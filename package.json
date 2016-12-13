@@ -17,20 +17,31 @@
     "npm scripts",
     "npm-scripts"
   ],
+  "config": {
+    "css": {
+      "src": "src/styles",
+      "dist": "dist/styles"
+    },
+    "js": {
+      "src": "src/scripts",
+      "dist": "dist/scripts"
+    },
+    "browserSyncOpt": "--server --serveStatic dist --files 'dist/styles/*.css, dist/scripts/*.js, **/*.html'"
+  },
   "scripts": {
-    "browserify": "browserify --entry src/scripts/app.js --transform babelify > dist/scripts/bundle.js",
-    "uglify": "uglifyjs --compress warnings=false --mangle --output dist/scripts/bundle.min.js -- dist/scripts/bundle.js",
-    "serve": "browser-sync start --server --serveStatic dist --files 'dist/styles/*.css, dist/scripts/*.js, **/*.html'",
-    "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css",
-    "build:js": "mkdirp dist/scripts && npm run browserify && npm run uglify",
+    "browserify": "browserify --entry $npm_package_config_js_src/app.js --transform babelify > $npm_package_config_js_dist/bundle.js",
+    "uglify": "uglifyjs --compress warnings=false --mangle --output $npm_package_config_js_dist/bundle.min.js -- $npm_package_config_js_dist/bundle.js",
+    "serve": "browser-sync start $npm_package_config_browserSyncOpt",
+    "build:css": "postcss --config .postcssrc.json --dir $npm_package_config_css_dist $npm_package_config_css_src/*.css",
+    "build:js": "mkdirp $npm_package_config_js_dist && npm run browserify && npm run uglify",
     "watch": "npm run serve & npm run watch:css & npm run watch:js",
     "watch:css": "npm run build:css -- --watch --map",
-    "watch:js": "mkdirp dist/scripts && watchify --entry src/scripts/app.js --transform babelify --outfile 'exorcist dist/scripts/bundle.js.map > dist/scripts/bundle.js' --debug --verbose",
+    "watch:js": "mkdirp $npm_package_config_js_dist && watchify --entry $npm_package_config_js_src/app.js --transform babelify --outfile 'exorcist $npm_package_config_js_dist/bundle.js.map > $npm_package_config_js_dist/bundle.js' --debug --verbose",
     "clean": "npm run clean:css & npm run clean:js",
-    "clean:css": "rimraf dist/styles/*",
-    "clean:js": "rimraf dist/scripts/*",
-    "lint:css": "stylelint 'src/styles/**/*css'",
-    "lint:js": "eslint src/scripts"
+    "clean:css": "rimraf $npm_package_config_css_dist/*",
+    "clean:js": "rimraf $npm_package_config_js_dist/*",
+    "lint:css": "stylelint '$npm_package_config_css_src/**/*css'",
+    "lint:js": "eslint $npm_package_config_js_src"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
