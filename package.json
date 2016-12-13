@@ -23,6 +23,7 @@
     "serve": "browser-sync start --server --serveStatic dist --files 'dist/styles/*.css, dist/scripts/*.js, **/*.html'",
     "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css",
     "build:js": "mkdirp dist/scripts && npm run browserify && npm run uglify",
+    "watch": "npm run serve & npm run watch:css & npm run watch:js",
     "watch:css": "npm run build:css -- --watch --map",
     "watch:js": "mkdirp dist/scripts && watchify --entry src/scripts/app.js --transform babelify --outfile 'exorcist dist/scripts/bundle.js.map > dist/scripts/bundle.js' --debug --verbose",
     "lint:css": "stylelint 'src/styles/**/*css'",
