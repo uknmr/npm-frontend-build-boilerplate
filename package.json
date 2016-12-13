@@ -20,6 +20,7 @@
   "scripts": {
     "browserify": "browserify --entry src/scripts/app.js --transform babelify > dist/scripts/bundle.js",
     "uglify": "uglifyjs --compress warnings=false --mangle --output dist/scripts/bundle.min.js -- dist/scripts/bundle.js",
+    "serve": "browser-sync start --server --serveStatic dist --files 'dist/styles/*.css, dist/scripts/*.js, **/*.html'",
     "build:css": "postcss --config .postcssrc.json --dir dist/styles src/styles/*.css",
     "build:js": "mkdirp dist/scripts && npm run browserify && npm run uglify",
     "watch:css": "npm run build:css -- --watch --map",
@@ -32,6 +33,7 @@
     "babel-eslint": "^7.1.1",
     "babel-preset-es2015": "^6.18.0",
     "babelify": "^7.3.0",
+    "browser-sync": "^2.18.5",
     "browserify": "^13.1.1",
     "csswring": "^5.1.0",
     "eslint": "^3.12.0",
